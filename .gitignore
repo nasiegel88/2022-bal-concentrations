@@ -1,0 +1,5 @@
+.jupyter/*
+.jupyter-server-log.txt
+.local/* 
+.rstudio/* 
+.subversion/*
