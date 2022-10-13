@@ -1,0 +1,395 @@
+library(tidyverse)
+library(rstatix)
+library(ggpubr)
+read.delim('samples.txt')
+read.delim('samples.txt')
+t <- read.delim('samples.txt')
+sum(t$)
+sum(t$Molarity)
+t$Conc./sum(t$Molarity)
+sum(t$Conc./sum(t$Molarity))
+t$Conc.
+t
+sum(t$Molarity/sum(t$Molarity))
+read.delim('samples.txt') %>%
+mutate(Percentage = Molarity/sum(Molarity))
+read.delim('samples.txt') %>%
+mutate(
+Percentage = Molarity/sum(Molarity),
+Total = sum(Percentage)
+)
+read.delim('samples.txt') %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+Total = sum(Percentage)
+Percentage =  Molarity/sum(Molarity)/*100
+)
+read.delim('samples.txt') %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+Total = sum(Percentage),
+Percentage =  Molarity/sum(Molarity)/*100
+)
+read.delim('samples.txt') %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+Total = sum(Percentage),
+Percentage =  Molarity/sum(Molarity)*100
+)
+read.delim('samples.txt') %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+Total = sum(Percentage),
+Percentage =  (Molarity/sum(Molarity))*100
+)
+read.delim('samples.txt') %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+Total = sum(Proportion),
+Percentage =  (Molarity/sum(Molarity))*100
+)
+read.delim('samples.txt') %>%
+group_by(X)
+data <- read.delim('samples.txt') %>%
+group_by(X)
+View(data)
+data <- read.delim('samples.txt') %>%
+group_by(X) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+Total = sum(Proportion),
+Percentage =  (Molarity/sum(Molarity))*100
+)
+View(data)
+data <- read.delim('samples.txt') %>%
+group_by(X) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+Total = sum(Proportion),
+Percentage =  str_squish((Molarity/sum(Molarity))*100)
+)
+View(data)
+data <- read.delim('samples.txt') %>%
+group_by(X) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+Total = sum(Proportion),
+Percentage =  round(str_squish((Molarity/sum(Molarity))*100), 2)
+)
+View(data)
+data <- read.delim('samples.txt') %>%
+group_by(X) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+Total = sum(Proportion),
+Percentage =  str_squish((Molarity/sum(Molarity))*100)
+)
+data <- read.delim('samples.txt') %>%
+group_by(X) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+Total = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity))*100),2)
+)
+?round
+data <- read.delim('samples.txt') %>%
+group_by(X) %>%
+mutate(
+Proportion = round(Molarity/sum(Molarity), digits = 2),
+Total = sum(Proportion),
+Percentage =  str_squish((Molarity/sum(Molarity))*100)
+)
+data <- read.delim('samples.txt') %>%
+group_by(X) %>%
+mutate(
+Proportion = round(Molarity/sum(Molarity), digits = 2),
+Total = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity))*100), digits = 2))
+data <- read.delim('samples.txt') %>%
+group_by(X) %>%
+mutate(
+Proportion = round(Molarity/sum(Molarity), digits = 2),
+Total = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity))*100))
+)
+library(tidyverse)
+library(rstatix)
+library(ggpubr)
+data <- read.delim('samples.txt') %>%
+group_by(X) %>%
+mutate(
+Proportion = round(Molarity/sum(Molarity), digits = 2),
+Total = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity))*100))
+)
+View(data)
+data <- read.delim('samples.txt') %>%
+group_by(X) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+Total = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity))*100))
+)
+View(data)
+data <- read.delim('samples.txt') %>%
+group_by(X) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+Total = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity))*100))
+)
+View(data)
+data <- read.delim('samples.txt') %>%
+group_by(X) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+Total = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity)*100)))
+)
+data <- read.delim('samples.txt') %>%
+group_by(X) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+Total = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2))
+)
+library(tidyverse)
+library(rstatix)
+library(ggpubr)
+data <- read.delim('samples.txt') %>%
+group_by(X) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+Total = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2))
+)
+View(data)
+read_xl('samples.xlsx')
+readxl('samples.xlsx')
+read_excel('samples.xlsx')
+library(readxl)
+read_excel('samples.xlsx')
+read_excel('samples.xlsx') %>%
+group_by(X) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+Total = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2))
+)
+read_excel('samples.xlsx')
+read_excel('samples.xlsx') %>%
+group_by(...1) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+Total = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2))
+)
+View(data)
+read_excel('samples.xlsx') %>%
+group_by(...1) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+Total = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2))
+)
+View(data)
+read_excel('samples.xlsx')
+View(read_excel('samples.xlsx'))
+View(data)
+data <- read_excel('samples.xlsx') %>%
+group_by(...1) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+Total = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2))
+)
+View(data)
+data <- read_excel('samples.xlsx') %>%
+group_by(...1) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+Total = sum(Proportion),
+Test = length(...1),
+Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2))
+)
+View(data)
+data <- read_excel('samples.xlsx') %>%
+group_by(...1) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+`Total Proportion` = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+`# of Peaks` = length(...1)
+)
+View(data)
+read_excel('samples.xlsx')[1]
+unique(read_excel('samples.xlsx')[1])
+if (unique(read_excel('samples.xlsx')[1]) == 26) {
+data <- read_excel('samples.xlsx') %>%
+group_by(...1) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+`Total Proportion` = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+`# of Peaks` = length(...1)
+)
+View(data)
+}
+unique(read_excel('samples.xlsx')[1]) == 26
+if (length(unique(read_excel('samples.xlsx')[1])) == 26) {
+data <- read_excel('samples.xlsx') %>%
+group_by(...1) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+`Total Proportion` = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+`# of Peaks` = length(...1)
+)
+View(data)
+}
+library(openxlsx)
+?openxlsx
+write.xlsx(data, 'clean_data.xlsx')
+if (length(unique(read_excel('samples.xlsx')[1])) == 26) {
+data <- read_excel('samples.xlsx') %>%
+group_by(...1) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+`Total Proportion` = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+`# of Peaks` = length(...1)
+)
+write.xlsx(data, 'clean_data.xlsx')
+}
+read_excel('samples.xlsx') %>%
+group_by(...1) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+`Total Proportion` = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+`# of Peaks` = length(...1)
+) %>%
+filter( between(size, 590, 625) )
+read_excel('samples.xlsx') %>%
+group_by(...1) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+`Total Proportion` = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+`# of Peaks` = length(...1)
+) %>%
+filter( between(Size, 590, 625) )
+# Determine concentrations of target sequences (~600bp)
+filtered <- read_excel('samples.xlsx') %>%
+group_by(...1) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+`Total Proportion` = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+`# of Peaks` = length(...1)
+) %>%
+filter( between(Size, 590, 625) )
+write.xlsx(filtered, 'filtered_length.xlsx')
+library(tidyverse)
+library(rstatix)
+library(ggpubr)
+library(readxl)
+library(openxlsx)
+if (length(unique(read_excel('samples.xlsx')[1])) == 26) {
+data <- read_excel('samples.xlsx') %>%
+group_by(...1) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+`Total Proportion` = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+`# of Peaks` = length(...1)
+)
+write.xlsx(data, 'clean_data.xlsx')
+}
+# Determine concentrations of target sequences (~600bp)
+filtered <- read_excel('samples.xlsx') %>%
+group_by(...1) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+`Total Proportion` = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+`# of Peaks` = length(...1)
+) %>%
+filter( between(Size, 590, 625) )
+write.xlsx(filtered, 'filtered_length.xlsx')
+library(tidyverse)
+library(rstatix)
+library(ggpubr)
+library(readxl)
+library(openxlsx)
+if (length(unique(read_excel('samples.xlsx')[1])) == 26) {
+data <- read_excel('samples.xlsx') %>%
+group_by(...1) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+`Total Proportion` = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+`# of Peaks` = length(...1)
+)
+write.xlsx(data, 'clean_data.xlsx')
+}
+# Determine concentrations of target sequences (~600bp)
+filtered <- read_excel('samples.xlsx') %>%
+group_by(...1) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+`Total Proportion` = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+`# of Peaks` = length(...1)
+) %>%
+filter( between(Size, 590, 625) )
+write.xlsx(filtered, 'filtered_length.xlsx')
+library(tidyverse)
+library(rstatix)
+library(ggpubr)
+library(readxl)
+library(openxlsx)
+if (length(unique(read_excel('samples.xlsx')[1])) == 26) {
+data <- read_excel('samples.xlsx') %>%
+group_by(...1) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+`Total Proportion` = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+`# of Peaks` = length(...1)
+)
+write.xlsx(data, 'clean_data.xlsx')
+}
+# Determine concentrations of target sequences (~600bp)
+filtered <- read_excel('samples.xlsx') %>%
+group_by(...1) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+`Total Proportion` = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+`# of Peaks` = length(...1)
+) %>%
+filter( between(Size, 590, 630) )
+write.xlsx(filtered, 'filtered_length.xlsx')
+# Determine concentrations of target sequences (~600bp)
+filtered <- read_excel('samples.xlsx') %>%
+group_by(...1) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+`Total Proportion` = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+`# of Peaks` = length(...1)
+) %>%
+filter( between(Size, 590, 630) )
+write.xlsx(filtered, 'filtered_length.xlsx')
+# Determine concentrations of target sequences (~600bp)
+filtered <- read_excel('samples.xlsx') %>%
+group_by(...1) %>%
+mutate(
+Proportion = Molarity/sum(Molarity),
+`Total Proportion` = sum(Proportion),
+Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+`# of Peaks` = length(...1)
+) %>%
+filter( between(Size, 590, 630) )
+write.xlsx(filtered, 'filtered_length.xlsx')

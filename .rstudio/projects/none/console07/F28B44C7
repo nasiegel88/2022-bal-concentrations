@@ -1,0 +1,8 @@
+--prefix: 1 required TEXT missing
+Run with --help for more information.
+Run 'mamba init' to be able to run mamba activate/deactivate
+and start a new shell session. Or use conda to activate/deactivate.
+
+    $ conda activate
+
+]0;/home/noahsnoahs@96aa6cb296b6:~$ 

@@ -1,0 +1,547 @@
+1665515420200:read.delim('samples.txt')
+1665515448400:library(tidyverse)
+1665515454424:library(rstatix)
+1665515456324:library(ggpubr)
+1665515459804:library(tidyverse)
+1665515644342:library(tidyverse)
+1665515646893:library(rstatix)
+1665515647045:library(ggpubr)
+1665515655035:read.delim('samples.txt')
+1665515694508:read.delim('samples.txt')
+1665515736908:t <- read.delim('samples.txt')
+1665515746764:sum(t$)
+1665515759198:sum(t$Molarity)
+1665515793996:t$Conc./sum(t$Molarity)
+1665515805842:sum(t$Conc./sum(t$Molarity))
+1665515813653:t$Conc.
+1665515825464:t
+1665515836621:sum(t$Molarity/sum(t$Molarity))
+1665515850478:read.delim('samples.txt') %>%
+1665515850536:mutate(Percentage = Molarity/sum(Molarity))
+1665515891847:read.delim('samples.txt') %>%
+1665515891909:mutate(
+1665515891976:Percentage = Molarity/sum(Molarity),
+1665515892035:Total = sum(Percentage)
+1665515892101:)
+1665515925419:read.delim('samples.txt') %>%
+1665515925501:mutate(
+1665515925582:Proportion = Molarity/sum(Molarity),
+1665515925658:Total = sum(Percentage)
+1665515925722:Percentage =  Molarity/sum(Molarity)/*100
+1665515925897:)
+1665515931391:read.delim('samples.txt') %>%
+1665515931462:mutate(
+1665515931527:Proportion = Molarity/sum(Molarity),
+1665515931592:Total = sum(Percentage),
+1665515931658:Percentage =  Molarity/sum(Molarity)/*100
+1665515931723:)
+1665515940489:read.delim('samples.txt') %>%
+1665515940552:mutate(
+1665515940622:Proportion = Molarity/sum(Molarity),
+1665515940685:Total = sum(Percentage),
+1665515940749:Percentage =  Molarity/sum(Molarity)*100
+1665515940808:)
+1665515949920:read.delim('samples.txt') %>%
+1665515949996:mutate(
+1665515950062:Proportion = Molarity/sum(Molarity),
+1665515950133:Total = sum(Percentage),
+1665515950209:Percentage =  (Molarity/sum(Molarity))*100
+1665515950281:)
+1665515960760:read.delim('samples.txt') %>%
+1665515960818:mutate(
+1665515960873:Proportion = Molarity/sum(Molarity),
+1665515960928:Total = sum(Proportion),
+1665515960981:Percentage =  (Molarity/sum(Molarity))*100
+1665515961031:)
+1665516085698:read.delim('samples.txt') %>%
+1665516085762:group_by(X)
+1665516092728:data <- read.delim('samples.txt') %>%
+1665516092796:group_by(X)
+1665516097571:View(data)
+1665516114840:data <- read.delim('samples.txt') %>%
+1665516114899:group_by(X) %>%
+1665516114963:mutate(
+1665516115022:Proportion = Molarity/sum(Molarity),
+1665516115085:Total = sum(Proportion),
+1665516115156:Percentage =  (Molarity/sum(Molarity))*100
+1665516115230:)
+1665516115981:View(data)
+1665516236952:data <- read.delim('samples.txt') %>%
+1665516237017:group_by(X) %>%
+1665516237078:mutate(
+1665516237149:Proportion = Molarity/sum(Molarity),
+1665516237211:Total = sum(Proportion),
+1665516237277:Percentage =  str_squish((Molarity/sum(Molarity))*100)
+1665516237338:)
+1665516237460:View(data)
+1665516258587:data <- read.delim('samples.txt') %>%
+1665516258658:group_by(X) %>%
+1665516258734:mutate(
+1665516258806:Proportion = Molarity/sum(Molarity),
+1665516258869:Total = sum(Proportion),
+1665516258921:Percentage =  round(str_squish((Molarity/sum(Molarity))*100), 2)
+1665516258987:)
+1665516293644:View(data)
+1665516296824:data <- read.delim('samples.txt') %>%
+1665516296890:group_by(X) %>%
+1665516296950:mutate(
+1665516297027:Proportion = Molarity/sum(Molarity),
+1665516297097:Total = sum(Proportion),
+1665516297167:Percentage =  str_squish((Molarity/sum(Molarity))*100)
+1665516297239:)
+1665516318164:data <- read.delim('samples.txt') %>%
+1665516318231:group_by(X) %>%
+1665516318291:mutate(
+1665516318348:Proportion = Molarity/sum(Molarity),
+1665516318406:Total = sum(Proportion),
+1665516318469:Percentage =  str_squish(round((Molarity/sum(Molarity))*100),2)
+1665516318533:)
+1665516324988:?round
+1665516347324:data <- read.delim('samples.txt') %>%
+1665516347391:group_by(X) %>%
+1665516347456:mutate(
+1665516347524:Proportion = round(Molarity/sum(Molarity), digits = 2),
+1665516347592:Total = sum(Proportion),
+1665516347666:Percentage =  str_squish((Molarity/sum(Molarity))*100)
+1665516347729:)
+1665516379842:data <- read.delim('samples.txt') %>%
+1665516379902:group_by(X) %>%
+1665516379970:mutate(
+1665516380031:Proportion = round(Molarity/sum(Molarity), digits = 2),
+1665516380096:Total = sum(Proportion),
+1665516380163:Percentage =  str_squish(round((Molarity/sum(Molarity))*100), digits = 2))
+1665516397819:data <- read.delim('samples.txt') %>%
+1665516397884:group_by(X) %>%
+1665516397949:mutate(
+1665516398012:Proportion = round(Molarity/sum(Molarity), digits = 2),
+1665516398077:Total = sum(Proportion),
+1665516398146:Percentage =  str_squish(round((Molarity/sum(Molarity))*100))
+1665516398213:)
+1665516405624:library(tidyverse)
+1665516405691:library(rstatix)
+1665516405776:library(ggpubr)
+1665516405899:data <- read.delim('samples.txt') %>%
+1665516405952:group_by(X) %>%
+1665516406023:mutate(
+1665516406083:Proportion = round(Molarity/sum(Molarity), digits = 2),
+1665516406149:Total = sum(Proportion),
+1665516406217:Percentage =  str_squish(round((Molarity/sum(Molarity))*100))
+1665516406284:)
+1665516406417:View(data)
+1665516424764:data <- read.delim('samples.txt') %>%
+1665516424828:group_by(X) %>%
+1665516424890:mutate(
+1665516424951:Proportion = Molarity/sum(Molarity),
+1665516425012:Total = sum(Proportion),
+1665516425072:Percentage =  str_squish(round((Molarity/sum(Molarity))*100))
+1665516425153:)
+1665516425770:View(data)
+1665516433766:data <- read.delim('samples.txt') %>%
+1665516433822:group_by(X) %>%
+1665516433886:mutate(
+1665516433945:Proportion = Molarity/sum(Molarity),
+1665516434009:Total = sum(Proportion),
+1665516434073:Percentage =  str_squish(round((Molarity/sum(Molarity))*100))
+1665516434136:)
+1665516434271:View(data)
+1665516470055:data <- read.delim('samples.txt') %>%
+1665516470119:group_by(X) %>%
+1665516470183:mutate(
+1665516470247:Proportion = Molarity/sum(Molarity),
+1665516470310:Total = sum(Proportion),
+1665516470371:Percentage =  str_squish(round((Molarity/sum(Molarity)*100)))
+1665516470429:)
+1665516480883:data <- read.delim('samples.txt') %>%
+1665516480941:group_by(X) %>%
+1665516481001:mutate(
+1665516481055:Proportion = Molarity/sum(Molarity),
+1665516481109:Total = sum(Proportion),
+1665516481165:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2))
+1665516481219:)
+1665516552655:library(tidyverse)
+1665516552725:library(rstatix)
+1665516552811:library(ggpubr)
+1665516552912:data <- read.delim('samples.txt') %>%
+1665516552975:group_by(X) %>%
+1665516553040:mutate(
+1665516553112:Proportion = Molarity/sum(Molarity),
+1665516553177:Total = sum(Proportion),
+1665516553241:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2))
+1665516553309:)
+1665516553496:View(data)
+1665516797931:read_xl('samples.xlsx')
+1665516802265:readxl('samples.xlsx')
+1665516832331:read_excel('samples.xlsx')
+1665516862389:library(readxl)
+1665516863209:read_excel('samples.xlsx')
+1665516867813:read_excel('samples.xlsx') %>%
+1665516867878:group_by(X) %>%
+1665516867948:mutate(
+1665516868011:Proportion = Molarity/sum(Molarity),
+1665516868073:Total = sum(Proportion),
+1665516868137:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2))
+1665516868199:)
+1665516874155:read_excel('samples.xlsx')
+1665516882500:read_excel('samples.xlsx') %>%
+1665516882562:group_by(...1) %>%
+1665516882621:mutate(
+1665516882683:Proportion = Molarity/sum(Molarity),
+1665516882747:Total = sum(Proportion),
+1665516882806:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2))
+1665516882866:)
+1665516886982:View(data)
+1665516920523:read_excel('samples.xlsx') %>%
+1665516920580:group_by(...1) %>%
+1665516920650:mutate(
+1665516920707:Proportion = Molarity/sum(Molarity),
+1665516920763:Total = sum(Proportion),
+1665516920821:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2))
+1665516920873:)
+1665516921556:View(data)
+1665516948618:read_excel('samples.xlsx')
+1665516953642:View(read_excel('samples.xlsx'))
+1665516963291:View(data)
+1665516972789:data <- read_excel('samples.xlsx') %>%
+1665516972859:group_by(...1) %>%
+1665516972928:mutate(
+1665516973003:Proportion = Molarity/sum(Molarity),
+1665516973079:Total = sum(Proportion),
+1665516973142:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2))
+1665516973198:)
+1665516973735:View(data)
+1665517330478:data <- read_excel('samples.xlsx') %>%
+1665517330532:group_by(...1) %>%
+1665517330594:mutate(
+1665517330647:Proportion = Molarity/sum(Molarity),
+1665517330712:Total = sum(Proportion),
+1665517330777:Test = length(...1),
+1665517330884:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2))
+1665517330986:)
+1665517332576:View(data)
+1665517387890:data <- read_excel('samples.xlsx') %>%
+1665517387956:group_by(...1) %>%
+1665517388022:mutate(
+1665517388086:Proportion = Molarity/sum(Molarity),
+1665517388156:`Total Proportion` = sum(Proportion),
+1665517388219:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+1665517388276:`# of Peaks` = length(...1)
+1665517388334:)
+1665517389741:View(data)
+1665518152953:read_excel('samples.xlsx')[1]
+1665518162853:unique(read_excel('samples.xlsx')[1])
+1665518197578:if (unique(read_excel('samples.xlsx')[1]) == 26) {
+1665518197672:data <- read_excel('samples.xlsx') %>%
+1665518197737:group_by(...1) %>%
+1665518197805:mutate(
+1665518197863:Proportion = Molarity/sum(Molarity),
+1665518197938:`Total Proportion` = sum(Proportion),
+1665518198001:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+1665518198061:`# of Peaks` = length(...1)
+1665518198122:)
+1665518198214:View(data)
+1665518198350:}
+1665518206224:unique(read_excel('samples.xlsx')[1]) == 26
+1665518219383:if (length(unique(read_excel('samples.xlsx')[1])) == 26) {
+1665518219475:data <- read_excel('samples.xlsx') %>%
+1665518219536:group_by(...1) %>%
+1665518219594:mutate(
+1665518219657:Proportion = Molarity/sum(Molarity),
+1665518219720:`Total Proportion` = sum(Proportion),
+1665518219789:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+1665518219861:`# of Peaks` = length(...1)
+1665518219935:)
+1665518220034:View(data)
+1665518220134:}
+1665518248939:library(openxlsx)
+1665518283398:?openxlsx
+1665518336845:write.xlsx(data, 'clean_data.xlsx')
+1665518338234:if (length(unique(read_excel('samples.xlsx')[1])) == 26) {
+1665518338336:data <- read_excel('samples.xlsx') %>%
+1665518338411:group_by(...1) %>%
+1665518338485:mutate(
+1665518338564:Proportion = Molarity/sum(Molarity),
+1665518338625:`Total Proportion` = sum(Proportion),
+1665518338682:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+1665518338744:`# of Peaks` = length(...1)
+1665518338803:)
+1665518338891:write.xlsx(data, 'clean_data.xlsx')
+1665518338958:}
+1665520007763:read_excel('samples.xlsx') %>%
+1665520007844:group_by(...1) %>%
+1665520007911:mutate(
+1665520007982:Proportion = Molarity/sum(Molarity),
+1665520008051:`Total Proportion` = sum(Proportion),
+1665520008128:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+1665520008193:`# of Peaks` = length(...1)
+1665520008263:) %>%
+1665520008327:filter( between(size, 590, 625) )
+1665520018916:read_excel('samples.xlsx') %>%
+1665520019083:group_by(...1) %>%
+1665520019149:mutate(
+1665520019227:Proportion = Molarity/sum(Molarity),
+1665520019301:`Total Proportion` = sum(Proportion),
+1665520019375:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+1665520019448:`# of Peaks` = length(...1)
+1665520019520:) %>%
+1665520019586:filter( between(Size, 590, 625) )
+1665520055902:# Determine concentrations of target sequences (~600bp)
+1665520055962:filtered <- read_excel('samples.xlsx') %>%
+1665520056027:group_by(...1) %>%
+1665520056096:mutate(
+1665520056170:Proportion = Molarity/sum(Molarity),
+1665520056229:`Total Proportion` = sum(Proportion),
+1665520056295:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+1665520056367:`# of Peaks` = length(...1)
+1665520056428:) %>%
+1665520056493:filter( between(Size, 590, 625) )
+1665520057156:write.xlsx(filtered, 'filtered_length.xlsx')
+1665520379430:library(tidyverse)
+1665520379507:library(rstatix)
+1665520379586:library(ggpubr)
+1665520379668:library(readxl)
+1665520379746:library(openxlsx)
+1665520379864:if (length(unique(read_excel('samples.xlsx')[1])) == 26) {
+1665520379990:data <- read_excel('samples.xlsx') %>%
+1665520380078:group_by(...1) %>%
+1665520380174:mutate(
+1665520380290:Proportion = Molarity/sum(Molarity),
+1665520380392:`Total Proportion` = sum(Proportion),
+1665520380486:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+1665520380568:`# of Peaks` = length(...1)
+1665520380646:)
+1665520380770:write.xlsx(data, 'clean_data.xlsx')
+1665520380853:}
+1665520381560:# Determine concentrations of target sequences (~600bp)
+1665520381668:filtered <- read_excel('samples.xlsx') %>%
+1665520381764:group_by(...1) %>%
+1665520381852:mutate(
+1665520381936:Proportion = Molarity/sum(Molarity),
+1665520382014:`Total Proportion` = sum(Proportion),
+1665520382095:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+1665520382173:`# of Peaks` = length(...1)
+1665520382250:) %>%
+1665520382328:filter( between(Size, 590, 625) )
+1665520382988:write.xlsx(filtered, 'filtered_length.xlsx')
+1665520415625:library(tidyverse)
+1665520415701:library(rstatix)
+1665520415769:library(ggpubr)
+1665520415830:library(readxl)
+1665520415900:library(openxlsx)
+1665520416003:if (length(unique(read_excel('samples.xlsx')[1])) == 26) {
+1665520416108:data <- read_excel('samples.xlsx') %>%
+1665520416178:group_by(...1) %>%
+1665520416243:mutate(
+1665520416307:Proportion = Molarity/sum(Molarity),
+1665520416372:`Total Proportion` = sum(Proportion),
+1665520416441:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+1665520416501:`# of Peaks` = length(...1)
+1665520416562:)
+1665520416680:write.xlsx(data, 'clean_data.xlsx')
+1665520416743:}
+1665520417470:# Determine concentrations of target sequences (~600bp)
+1665520417535:filtered <- read_excel('samples.xlsx') %>%
+1665520417591:group_by(...1) %>%
+1665520417664:mutate(
+1665520417737:Proportion = Molarity/sum(Molarity),
+1665520417819:`Total Proportion` = sum(Proportion),
+1665520417891:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+1665520417958:`# of Peaks` = length(...1)
+1665520418027:) %>%
+1665520418090:filter( between(Size, 590, 625) )
+1665520418669:write.xlsx(filtered, 'filtered_length.xlsx')
+1665520886693:library(tidyverse)
+1665520886765:library(rstatix)
+1665520886837:library(ggpubr)
+1665520886903:library(readxl)
+1665520886974:library(openxlsx)
+1665520887098:if (length(unique(read_excel('samples.xlsx')[1])) == 26) {
+1665520887207:data <- read_excel('samples.xlsx') %>%
+1665520887285:group_by(...1) %>%
+1665520887354:mutate(
+1665520887426:Proportion = Molarity/sum(Molarity),
+1665520887491:`Total Proportion` = sum(Proportion),
+1665520887562:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+1665520887630:`# of Peaks` = length(...1)
+1665520887697:)
+1665520887806:write.xlsx(data, 'clean_data.xlsx')
+1665520887879:}
+1665520888842:# Determine concentrations of target sequences (~600bp)
+1665520888906:filtered <- read_excel('samples.xlsx') %>%
+1665520888990:group_by(...1) %>%
+1665520889096:mutate(
+1665520889202:Proportion = Molarity/sum(Molarity),
+1665520889271:`Total Proportion` = sum(Proportion),
+1665520889355:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+1665520889420:`# of Peaks` = length(...1)
+1665520889487:) %>%
+1665520889553:filter( between(Size, 590, 630) )
+1665520890354:write.xlsx(filtered, 'filtered_length.xlsx')
+1665520955982:# Determine concentrations of target sequences (~600bp)
+1665520956051:filtered <- read_excel('samples.xlsx') %>%
+1665520956122:group_by(...1) %>%
+1665520956185:mutate(
+1665520956243:Proportion = Molarity/sum(Molarity),
+1665520956305:`Total Proportion` = sum(Proportion),
+1665520956386:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+1665520956480:`# of Peaks` = length(...1)
+1665520956567:) %>%
+1665520956730:filter( between(Size, 590, 630) )
+1665520957381:write.xlsx(filtered, 'filtered_length.xlsx')
+1665520976934:# Determine concentrations of target sequences (~600bp)
+1665520977010:filtered <- read_excel('samples.xlsx') %>%
+1665520977089:group_by(...1) %>%
+1665520977175:mutate(
+1665520977260:Proportion = Molarity/sum(Molarity),
+1665520977329:`Total Proportion` = sum(Proportion),
+1665520977418:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+1665520977488:`# of Peaks` = length(...1)
+1665520977564:) %>%
+1665520977653:filter( between(Size, 590, 630) )
+1665520978264:write.xlsx(filtered, 'filtered_length.xlsx')
+1665677210304:source('~/Calculate.R')
+1665677227292:source('~/Calculate.R')
+1665677257598:file.path('output', 'clean_data.xlsx')
+1665677263432:write.xlsx(data, file.path('output', 'clean_data.xlsx'))
+1665677266361:source('~/Calculate.R')
+1665677273229:if (length(unique(filtered[1]))==26) write.xlsx(filtered,
+1665677273230:file.path('output','filtered_length.xlsx'))
+1665677280487:length(unique(filtered[1]))==26
+1665677293623:filtered[1]
+1665677307029:length(unique(filtered[1]))==26
+1665677319851:length(unique(filtered[1]))==26
+1665677334214:length(unique(filtered[1]))==26
+1665677347483:# Determine concentrations of target sequences (~600bp)
+1665677347490:filtered <- read_excel('samples.xlsx') %>%
+1665677347492:group_by(...1) %>%
+1665677347494:mutate(
+1665677347496:Proportion = Molarity/sum(Molarity),
+1665677347498:`Total Proportion` = sum(Proportion),
+1665677347499:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+1665677347500:`# of Peaks` = length(...1)
+1665677347501:) %>%
+1665677347504:filter( between(Size, 590, 630) )
+1665677352409:length(unique(filtered[1]))==26
+1665677359868:# Determine concentrations of target sequences (~600bp)
+1665677359871:filtered <- read_excel('samples.xlsx') %>%
+1665677359872:group_by(...1) %>%
+1665677359873:mutate(
+1665677359874:Proportion = Molarity/sum(Molarity),
+1665677359875:`Total Proportion` = sum(Proportion),
+1665677359877:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+1665677359878:`# of Peaks` = length(...1)
+1665677359879:) %>%
+1665677359881:filter( between(Size, 580, 630) )
+1665677367893:length(unique(filtered[1]))==26
+1665677373103:# Determine concentrations of target sequences (~600bp)
+1665677373113:filtered <- read_excel('samples.xlsx') %>%
+1665677373115:group_by(...1) %>%
+1665677373116:mutate(
+1665677373117:Proportion = Molarity/sum(Molarity),
+1665677373118:`Total Proportion` = sum(Proportion),
+1665677373119:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+1665677373120:`# of Peaks` = length(...1)
+1665677373121:) %>%
+1665677373123:filter( between(Size, 580, 730) )
+1665677378694:length(unique(filtered[1]))==26
+1665677381929:# Determine concentrations of target sequences (~600bp)
+1665677381938:filtered <- read_excel('samples.xlsx') %>%
+1665677381941:group_by(...1) %>%
+1665677381943:mutate(
+1665677381944:Proportion = Molarity/sum(Molarity),
+1665677381945:`Total Proportion` = sum(Proportion),
+1665677381946:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+1665677381947:`# of Peaks` = length(...1)
+1665677381948:) %>%
+1665677381949:filter( between(Size, 80, 730) )
+1665677387731:length(unique(filtered[1]))==26
+1665677395996:unique(filtered[1])
+1665677408126:length(unique(filtered[1]))
+1665677442437:length(list(unique(filtered[1])))
+1665677462252:length(as.list(unique(filtered[1])))
+1665677473761:filtered[1])
+1665677477096:filtered[1]
+1665677492023:as.character(filtered[1])
+1665677507589:as.vector(filtered[1])
+1665677517588:filtered[1]$...1
+1665677526160:filtered$...1
+1665677554539:length(unique(filtered$...1))==26
+1665677567618:source('~/Calculate.R')
+1665677583818:source('~/Calculate.R')
+1665677611756:# Determine concentrations of target sequences (~600bp)
+1665677611766:filtered <- read_excel('samples.xlsx') %>%
+1665677611767:group_by(...1) %>%
+1665677611768:mutate(
+1665677611769:Proportion = Molarity/sum(Molarity),
+1665677611770:`Total Proportion` = sum(Proportion),
+1665677611771:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+1665677611772:`# of Peaks` = length(...1)
+1665677611773:) %>%
+1665677611773:filter( between(Size, 580, 630) )
+1665677612716:if (length(unique(filtered$...1))==26) write.xlsx(filtered,
+1665677612725:file.path('output','filtered_length.xlsx'))
+1665677618264:if (length(unique(filtered$...1))==26)
+1665677625940:# Determine concentrations of target sequences (~600bp)
+1665677625950:filtered <- read_excel('samples.xlsx') %>%
+1665677625952:group_by(...1) %>%
+1665677625953:mutate(
+1665677625955:Proportion = Molarity/sum(Molarity),
+1665677625957:`Total Proportion` = sum(Proportion),
+1665677625960:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+1665677625961:`# of Peaks` = length(...1)
+1665677625962:) %>%
+1665677625963:filter( between(Size, 580, 630) )
+1665677632408:write.xlsx(filtered,
+1665677632409:file.path('output','filtered_length.xlsx'))
+1665677651405:if (length(unique(filtered$...1))==26) {write.xlsx(filtered,
+1665677651416:file.path('output','filtered_length.xlsx'))
+1665677651417:}
+1665677662933:if (!length(unique(filtered$...1))==26) write.xlsx(filtered,
+1665677662942:file.path('output','filtered_length.xlsx'))
+1665677672144:length(unique(filtered$...1))==26
+1665677675372:# Determine concentrations of target sequences (~600bp)
+1665677675382:filtered <- read_excel('samples.xlsx') %>%
+1665677675383:group_by(...1) %>%
+1665677675384:mutate(
+1665677675386:Proportion = Molarity/sum(Molarity),
+1665677675387:`Total Proportion` = sum(Proportion),
+1665677675389:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+1665677675390:`# of Peaks` = length(...1)
+1665677675391:) %>%
+1665677675393:filter( between(Size, 580, 630) )
+1665677680841:length(unique(filtered$...1))==26
+1665677685599:# Determine concentrations of target sequences (~600bp)
+1665677685601:filtered <- read_excel('samples.xlsx') %>%
+1665677685603:group_by(...1) %>%
+1665677685604:mutate(
+1665677685605:Proportion = Molarity/sum(Molarity),
+1665677685607:`Total Proportion` = sum(Proportion),
+1665677685607:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+1665677685609:`# of Peaks` = length(...1)
+1665677685610:) %>%
+1665677685611:filter( between(Size, 570, 630) )
+1665677690007:length(unique(filtered$...1))==26
+1665677695719:# Determine concentrations of target sequences (~600bp)
+1665677695729:filtered <- read_excel('samples.xlsx') %>%
+1665677695731:group_by(...1) %>%
+1665677695732:mutate(
+1665677695733:Proportion = Molarity/sum(Molarity),
+1665677695734:`Total Proportion` = sum(Proportion),
+1665677695735:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+1665677695736:`# of Peaks` = length(...1)
+1665677695737:) %>%
+1665677695738:filter( between(Size, 570, 640) )
+1665677700062:length(unique(filtered$...1))==26
+1665677704596:# Determine concentrations of target sequences (~600bp)
+1665677704606:filtered <- read_excel('samples.xlsx') %>%
+1665677704608:group_by(...1) %>%
+1665677704610:mutate(
+1665677704611:Proportion = Molarity/sum(Molarity),
+1665677704612:`Total Proportion` = sum(Proportion),
+1665677704613:Percentage =  str_squish(round((Molarity/sum(Molarity)*100), 2)),
+1665677704614:`# of Peaks` = length(...1)
+1665677704615:) %>%
+1665677704616:filter( between(Size, 580, 640) )
+1665677708300:length(unique(filtered$...1))==26
+1665677719994:source('~/Calculate.R')
+1665677751345:read_excel('samples.xlsx')$...1
+1665677754667:source('~/Calculate.R')
