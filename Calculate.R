@@ -4,6 +4,12 @@ library(ggpubr)
 library(readxl)
 library(openxlsx)
 
+df <- data.frame(
+  Sample = c('A', 'A', 'B', 'C'),
+  Length = c('100', '110', '99', '102'),
+  Molarity = c(5,4,6,7)
+)
+
 # Output directory
 dir.create('output', showWarning = FALSE)
 
@@ -41,6 +47,8 @@ if (length(unique(filtered$...1))==26) write.xlsx(filtered,
 pooling <- filtered %>%
   select(`...1`, Size, Molarity) %>%
   
+  group_by(`...1`) %>%
+  
   # Rename to specify units
   rename(
     Samples = `...1`,
@@ -56,11 +64,20 @@ pooling <- filtered %>%
   # Arrange in decending order
   arrange(`Total Nano Mols`) %>%
   
+  mutate(Size = as.character(Size)) %>%
+  
+  summarise(Size = toString(Size),
+            `Molarity (pmol/l)` = sum(`Molarity (pmol/l)`),
+            `Molarity (nmol/ul)` = sum(`Molarity (nmol/ul)`),
+            `Total Nano Mols` = sum(`Total Nano Mols`),
+            )  %>%
+
   # Calculate the volume need for all samples to have the same number of mols
-  ##
-  mutate(`Volume Needed to Pool Samples` = round(1.940/`Molarity (nmol/ul)`, 2)) %>%
-  mutate(`Actual Volume Needed` = if_else(
-    `Total Nano Mols` < 1.940, paste('Use whole sample'),
-    paste(round(`Volume Needed to Pool Samples`,0))))
+  mutate(
+    `Volume Needed to Pool Samples` = round(1.940/`Molarity (nmol/ul)`, 2),
+    `Actual Volume Needed` = if_else(
+      `Total Nano Mols` < 1.940, paste('Use whole sample'),
+      paste(round(`Volume Needed to Pool Samples`,0)))
+  )
 
 write.xlsx(pooling, file.path('output', 'pooling.xlsx'))
