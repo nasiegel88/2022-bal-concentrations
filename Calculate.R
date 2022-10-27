@@ -36,3 +36,31 @@ filtered <- read_excel('samples.xlsx') %>%
 
 if (length(unique(filtered$...1))==26) write.xlsx(filtered,
                                                 file.path('output','filtered_length.xlsx'))
+
+# Calculations for pooling samples
+pooling <- filtered %>%
+  select(`...1`, Size, Molarity) %>%
+  
+  # Rename to specify units
+  rename(
+    Samples = `...1`,
+    `Molarity (pmol/l)` = Molarity
+    ) %>%
+  
+  # Convert pmol/l to nmol/ul
+  mutate(`Molarity (nmol/ul)` = `Molarity (pmol/l)`*(1/0.001)*(1/10^6)) %>%
+  
+  # Determine how many moles are in each sample which consist of 20ul
+  mutate(`Total Nano Mols` = `Molarity (nmol/ul)`*(20)) %>%
+  
+  # Arrange in decending order
+  arrange(`Total Nano Mols`) %>%
+  
+  # Calculate the volume need for all samples to have the same number of mols
+  ##
+  mutate(`Volume Needed to Pool Samples` = round(1.940/`Molarity (nmol/ul)`, 2)) %>%
+  mutate(`Actual Volume Needed` = if_else(
+    `Total Nano Mols` < 1.940, paste('Use whole sample'),
+    paste(round(`Volume Needed to Pool Samples`,0))))
+
+write.xlsx(pooling, file.path('output', 'pooling.xlsx'))
