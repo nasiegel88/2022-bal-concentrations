@@ -4,12 +4,6 @@ library(ggpubr)
 library(readxl)
 library(openxlsx)
 
-df <- data.frame(
-  Sample = c('A', 'A', 'B', 'C'),
-  Length = c('100', '110', '99', '102'),
-  Molarity = c(5,4,6,7)
-)
-
 # Output directory
 dir.create('output', showWarning = FALSE)
 
@@ -27,7 +21,6 @@ if (length(unique(read_excel('samples.xlsx')$...1)) == 26) {
   
   write.xlsx(data, file.path('output', 'clean_data.xlsx'))
 }
-
 
 # Determine concentrations of target sequences (~600bp)
 filtered <- read_excel('samples.xlsx') %>%
